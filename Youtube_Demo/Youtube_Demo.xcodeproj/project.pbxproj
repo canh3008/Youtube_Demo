@@ -14,9 +14,6 @@
 		533E07C72A750F7F00D87521 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533E07C62A750F7F00D87521 /* HomeController.swift */; };
 		533E07CC2A750F8100D87521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 533E07CB2A750F8100D87521 /* Assets.xcassets */; };
 		533E07CF2A750F8100D87521 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 533E07CD2A750F8100D87521 /* LaunchScreen.storyboard */; };
-		533E07DA2A750F8100D87521 /* Youtube_DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533E07D92A750F8100D87521 /* Youtube_DemoTests.swift */; };
-		533E07E42A750F8100D87521 /* Youtube_DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533E07E32A750F8100D87521 /* Youtube_DemoUITests.swift */; };
-		533E07E62A750F8100D87521 /* Youtube_DemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533E07E52A750F8100D87521 /* Youtube_DemoUITestsLaunchTests.swift */; };
 		536574522A75E7B00012F362 /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536574512A75E7B00012F362 /* Configurations.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,17 +42,14 @@
 		29E31DCE59E7031A39DB79C3 /* Pods-Youtube_Demo.stg_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube_Demo.stg_release.xcconfig"; path = "Target Support Files/Pods-Youtube_Demo/Pods-Youtube_Demo.stg_release.xcconfig"; sourceTree = "<group>"; };
 		2A893BCDB8C63EE277CDC364 /* Pods-Youtube_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube_Demo.release.xcconfig"; path = "Target Support Files/Pods-Youtube_Demo/Pods-Youtube_Demo.release.xcconfig"; sourceTree = "<group>"; };
 		46CE4EFE0F2CA48D43A0FE76 /* Pods_Youtube_Demo_Youtube_DemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Youtube_Demo_Youtube_DemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		533E07BF2A750F7F00D87521 /* Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		533E07BF2A750F7F00D87521 /* Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Youtube.app; path = Youtube_dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		533E07C22A750F7F00D87521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		533E07C62A750F7F00D87521 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		533E07CB2A750F8100D87521 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		533E07CE2A750F8100D87521 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		533E07D02A750F8100D87521 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		533E07D52A750F8100D87521 /* Youtube_DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Youtube_DemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		533E07D92A750F8100D87521 /* Youtube_DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Youtube_DemoTests.swift; sourceTree = "<group>"; };
 		533E07DF2A750F8100D87521 /* Youtube_DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Youtube_DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		533E07E32A750F8100D87521 /* Youtube_DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Youtube_DemoUITests.swift; sourceTree = "<group>"; };
-		533E07E52A750F8100D87521 /* Youtube_DemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Youtube_DemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		533E08122A751EA200D87521 /* Dev_Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Dev_Config.xcconfig; sourceTree = "<group>"; };
 		533E08132A751EB700D87521 /* Stg_Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Stg_Config.xcconfig; sourceTree = "<group>"; };
 		533E08182A756F7200D87521 /* Prod_Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Prod_Config.xcconfig; sourceTree = "<group>"; };
@@ -108,8 +102,6 @@
 			isa = PBXGroup;
 			children = (
 				533E07C12A750F7F00D87521 /* Youtube_Demo */,
-				533E07D82A750F8100D87521 /* Youtube_DemoTests */,
-				533E07E22A750F8100D87521 /* Youtube_DemoUITests */,
 				533E07C02A750F7F00D87521 /* Products */,
 				989820547F31A0BED0D66EA2 /* Pods */,
 				D657E6364863A319E8731DCD /* Frameworks */,
@@ -137,23 +129,6 @@
 				533E07D02A750F8100D87521 /* Info.plist */,
 			);
 			path = Youtube_Demo;
-			sourceTree = "<group>";
-		};
-		533E07D82A750F8100D87521 /* Youtube_DemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				533E07D92A750F8100D87521 /* Youtube_DemoTests.swift */,
-			);
-			path = Youtube_DemoTests;
-			sourceTree = "<group>";
-		};
-		533E07E22A750F8100D87521 /* Youtube_DemoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				533E07E32A750F8100D87521 /* Youtube_DemoUITests.swift */,
-				533E07E52A750F8100D87521 /* Youtube_DemoUITestsLaunchTests.swift */,
-			);
-			path = Youtube_DemoUITests;
 			sourceTree = "<group>";
 		};
 		533E08112A751E5B00D87521 /* Configurations */ = {
@@ -214,6 +189,7 @@
 				533E07BC2A750F7F00D87521 /* Frameworks */,
 				533E07BD2A750F7F00D87521 /* Resources */,
 				AF6E00BDD600A86C66F9ED5F /* [CP] Embed Pods Frameworks */,
+				536574532A76554E0012F362 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -355,6 +331,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		536574532A76554E0012F362 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
 		89B95F29427D942EA290315D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -450,7 +443,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				533E07DA2A750F8100D87521 /* Youtube_DemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,8 +450,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				533E07E42A750F8100D87521 /* Youtube_DemoUITests.swift in Sources */,
-				533E07E62A750F8100D87521 /* Youtube_DemoUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
