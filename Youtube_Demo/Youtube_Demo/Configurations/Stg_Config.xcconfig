@@ -1,0 +1,11 @@
+//
+//  Stg_Config.xcconfig
+//  Youtube_Demo
+//
+//  Created by Duc Canh on 29/07/2023.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+APP_NAME = Youtube_Stg
