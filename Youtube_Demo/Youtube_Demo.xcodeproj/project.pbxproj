@@ -10,6 +10,11 @@
 		09154931743964F9AF0AA4C4 /* Pods_Youtube_DemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5D537B4CEF474A96A563D5 /* Pods_Youtube_DemoTests.framework */; };
 		16E15FDDF648045B7104D50D /* Pods_Youtube_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB5908DFFDB88BDDAB429819 /* Pods_Youtube_Demo.framework */; };
 		376A4FEDF403850C0F829D20 /* Pods_Youtube_Demo_Youtube_DemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46CE4EFE0F2CA48D43A0FE76 /* Pods_Youtube_Demo_Youtube_DemoUITests.framework */; };
+		5323D40B2A7763B00022A808 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323D40A2A7763B00022A808 /* MenuBar.swift */; };
+		5323D40D2A7763BB0022A808 /* MenuBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5323D40C2A7763BB0022A808 /* MenuBar.xib */; };
+		5323D40F2A7763DC0022A808 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323D40E2A7763DC0022A808 /* BaseView.swift */; };
+		5323D4132A7765A60022A808 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5323D4112A7765A60022A808 /* MenuCell.swift */; };
+		5323D4142A7765A60022A808 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5323D4122A7765A60022A808 /* MenuCell.xib */; };
 		533E07C32A750F7F00D87521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533E07C22A750F7F00D87521 /* AppDelegate.swift */; };
 		533E07C72A750F7F00D87521 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533E07C62A750F7F00D87521 /* HomeController.swift */; };
 		533E07CC2A750F8100D87521 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 533E07CB2A750F8100D87521 /* Assets.xcassets */; };
@@ -47,6 +52,11 @@
 		29E31DCE59E7031A39DB79C3 /* Pods-Youtube_Demo.stg_release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube_Demo.stg_release.xcconfig"; path = "Target Support Files/Pods-Youtube_Demo/Pods-Youtube_Demo.stg_release.xcconfig"; sourceTree = "<group>"; };
 		2A893BCDB8C63EE277CDC364 /* Pods-Youtube_Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube_Demo.release.xcconfig"; path = "Target Support Files/Pods-Youtube_Demo/Pods-Youtube_Demo.release.xcconfig"; sourceTree = "<group>"; };
 		46CE4EFE0F2CA48D43A0FE76 /* Pods_Youtube_Demo_Youtube_DemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Youtube_Demo_Youtube_DemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5323D40A2A7763B00022A808 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
+		5323D40C2A7763BB0022A808 /* MenuBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuBar.xib; sourceTree = "<group>"; };
+		5323D40E2A7763DC0022A808 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		5323D4112A7765A60022A808 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		5323D4122A7765A60022A808 /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		533E07BF2A750F7F00D87521 /* Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Youtube.app; path = Youtube_dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		533E07C22A750F7F00D87521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		533E07C62A750F7F00D87521 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -108,6 +118,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5323D4082A7763900022A808 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				5323D4092A77639A0022A808 /* MenuBar */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		5323D4092A77639A0022A808 /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				5323D4102A7765880022A808 /* Cells */,
+				5323D40A2A7763B00022A808 /* MenuBar.swift */,
+				5323D40C2A7763BB0022A808 /* MenuBar.xib */,
+			);
+			path = MenuBar;
+			sourceTree = "<group>";
+		};
+		5323D4102A7765880022A808 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5323D4112A7765A60022A808 /* MenuCell.swift */,
+				5323D4122A7765A60022A808 /* MenuCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		533E07B62A750F7F00D87521 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +168,7 @@
 		533E07C12A750F7F00D87521 /* Youtube_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				5323D4082A7763900022A808 /* CustomView */,
 				5365745A2A765B3C0012F362 /* Suppports */,
 				536574572A765AB30012F362 /* Base */,
 				536574542A7659560012F362 /* ViewControllers */,
@@ -166,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				536574582A765AC60012F362 /* BaseViewController.swift */,
+				5323D40E2A7763DC0022A808 /* BaseView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -352,8 +391,10 @@
 			files = (
 				536574662A765FDC0012F362 /* VideoCell.xib in Resources */,
 				533E07CF2A750F8100D87521 /* LaunchScreen.storyboard in Resources */,
+				5323D4142A7765A60022A808 /* MenuCell.xib in Resources */,
 				5365745E2A765D620012F362 /* Localizable.strings in Resources */,
 				536574562A7659E10012F362 /* HomeController.xib in Resources */,
+				5323D40D2A7763BB0022A808 /* MenuBar.xib in Resources */,
 				533E07CC2A750F8100D87521 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -501,8 +542,11 @@
 			files = (
 				536574652A765FDC0012F362 /* VideoCell.swift in Sources */,
 				533E07C72A750F7F00D87521 /* HomeController.swift in Sources */,
+				5323D40B2A7763B00022A808 /* MenuBar.swift in Sources */,
 				536574592A765AC60012F362 /* BaseViewController.swift in Sources */,
+				5323D40F2A7763DC0022A808 /* BaseView.swift in Sources */,
 				533E07C32A750F7F00D87521 /* AppDelegate.swift in Sources */,
+				5323D4132A7765A60022A808 /* MenuCell.swift in Sources */,
 				536574522A75E7B00012F362 /* Configurations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

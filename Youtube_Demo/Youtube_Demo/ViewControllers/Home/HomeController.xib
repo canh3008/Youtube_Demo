@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="AFH-XY-PbS">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                     <color key="backgroundColor" systemColor="systemGray3Color"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="10" id="W3u-8B-MO8">
                         <size key="itemSize" width="128" height="128"/>
@@ -29,16 +29,26 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ak-yJ-HiC" customClass="MenuBar" customModule="Youtube" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Qc1-ja-83E"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="AFH-XY-PbS" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="5Nf-1F-W6P"/>
                 <constraint firstItem="AFH-XY-PbS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Eap-t1-yR1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0ak-yJ-HiC" secondAttribute="trailing" id="GTb-hR-TrO"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="AFH-XY-PbS" secondAttribute="bottom" id="MCI-SV-Juu"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AFH-XY-PbS" secondAttribute="trailing" id="UHO-ue-lqV"/>
+                <constraint firstItem="AFH-XY-PbS" firstAttribute="top" secondItem="0ak-yJ-HiC" secondAttribute="bottom" id="bOf-mh-DsG"/>
+                <constraint firstItem="0ak-yJ-HiC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="m09-IB-hNz"/>
+                <constraint firstItem="0ak-yJ-HiC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="nH8-VA-W6M"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="153"/>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
         </view>
     </objects>
     <resources>
