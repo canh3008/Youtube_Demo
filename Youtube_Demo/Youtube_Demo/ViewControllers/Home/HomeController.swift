@@ -12,6 +12,24 @@ class HomeController: BaseViewController {
 
     @IBOutlet private weak var collectionView: UICollectionView!
 
+    private lazy var videos = [Video]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    private var viewModel: HomeViewModel
+
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
@@ -24,9 +42,19 @@ class HomeController: BaseViewController {
         titleLabel.font = UIFont.systemFont(ofSize: 20)
         navigationItem.titleView = titleLabel
         setupNavigationBar()
+        setupNavigationBarButtons()
     }
 
     override func bindingData() {
+        let input = HomeViewModel.Input()
+        let output = viewModel.transform(input: input)
+        output.videos.drive { [weak self] videos in
+            guard let self = self else {
+                return
+            }
+            self.videos = videos
+        }
+        .disposed(by: disposeBag)
 
     }
 
@@ -70,24 +98,50 @@ class HomeController: BaseViewController {
 //              }
     }
 
+    private func setupNavigationBarButtons() {
+        let searchImage = UIImage(named: "seach_icon")?
+            .withTintColor(.white, renderingMode: .alwaysOriginal)
+        let searchButton = UIBarButtonItem(image: searchImage,
+                                           style: .done,
+                                           target: self,
+                                           action: #selector(handleSearch))
+
+        let moreImage = UIImage(named: "more_menu_icon")?
+            .withTintColor(.white, renderingMode: .alwaysOriginal)
+        let moreButton = UIBarButtonItem(image: moreImage,
+                                           style: .done,
+                                           target: self,
+                                           action: #selector(handleSearch))
+
+        navigationItem.rightBarButtonItems = [moreButton, searchButton]
+    }
+
+    @objc private func handleSearch() {
+
+    }
+
+    @objc private func handleMore() {
+
+    }
+
 }
 
 extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return videos.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withClass: VideoCell.self, for: indexPath)
-       
+        cell.config(with: videos[indexPath.row])
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 200)
+        return CGSize(width: collectionView.frame.width, height: 250)
     }
 
 }
