@@ -111,7 +111,7 @@ class HomeController: BaseViewController {
         let moreButton = UIBarButtonItem(image: moreImage,
                                            style: .done,
                                            target: self,
-                                           action: #selector(handleSearch))
+                                           action: #selector(handleMore))
 
         navigationItem.rightBarButtonItems = [moreButton, searchButton]
     }
@@ -121,7 +121,13 @@ class HomeController: BaseViewController {
     }
 
     @objc private func handleMore() {
-
+        let settingLauncherController = SettingLauncherViewController(viewModel: SettingLauncherViewModel())
+        settingLauncherController.modalPresentationStyle = .overFullScreen
+        settingLauncherController.modalTransitionStyle = .crossDissolve
+        settingLauncherController.completion = { [weak self] type in
+            print("zzzzzzz push view", type.model.name)
+        }
+        present(settingLauncherController, animated: true)
     }
 
 }
