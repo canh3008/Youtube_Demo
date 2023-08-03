@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingLauncherViewController" customModule="Youtube" customModuleProvider="target">
+            <connections>
+                <outlet property="emptyView" destination="B5v-jb-OcE" id="HBF-jk-LWS"/>
+                <outlet property="tableView" destination="7sw-Vz-cYO" id="fdk-Pp-IB0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7sw-Vz-cYO" customClass="ContentSizedTableView" customModule="Youtube" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Tc4-a0-idK"/>
+                    </constraints>
+                </tableView>
+                <view contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="812" translatesAutoresizingMaskIntoConstraints="NO" id="B5v-jb-OcE">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="812"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="knA-Ce-PGf"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7sw-Vz-cYO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Eg5-xu-ugA"/>
+                <constraint firstItem="B5v-jb-OcE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HJo-TX-tIi"/>
+                <constraint firstAttribute="trailing" secondItem="B5v-jb-OcE" secondAttribute="trailing" id="X1t-e6-Uvz"/>
+                <constraint firstItem="knA-Ce-PGf" firstAttribute="bottom" secondItem="7sw-Vz-cYO" secondAttribute="bottom" id="cmj-TT-DWb"/>
+                <constraint firstItem="7sw-Vz-cYO" firstAttribute="top" secondItem="B5v-jb-OcE" secondAttribute="bottom" id="iLQ-14-HdK"/>
+                <constraint firstAttribute="trailing" secondItem="7sw-Vz-cYO" secondAttribute="trailing" id="vX9-EY-T0E"/>
+                <constraint firstItem="B5v-jb-OcE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wb4-qy-5jn"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="152.67857142857142"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
