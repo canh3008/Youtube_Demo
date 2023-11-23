@@ -1,0 +1,19 @@
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+  - Frameworks
+  - Products
+  - Targets Support Files
+  - Youtube_DemoTests
+  - Youtube_DemoUITests
+# ----- Custom rule -----
+disabled_rules:
+  - trailing_whitespace
+identifier_name:
+  min_length: 2 # only min_length
+  excluded:
+    - URL
+line_length:
+    ignores_comments: true
+    warning: 500
+    error: 1000
