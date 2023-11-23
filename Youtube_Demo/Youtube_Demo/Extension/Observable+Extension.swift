@@ -43,11 +43,11 @@ protocol OptionalType {
 }
 
 extension Observable where Element: OptionalType {
-  func ignoreNil() -> Observable<Element.Wrapped> {
-    return flatMap { value in
-      value.optional.map { Observable<Element.Wrapped>.just($0) } ?? Observable<Element.Wrapped>.empty()
-    }
-  }
+//  func ignoreNil() -> Observable<Element.Wrapped> {
+//    return flatMap { value in
+//      value.optional.map { Observable<Element.Wrapped>.just($0) } ?? Observable<Element.Wrapped>.empty()
+//    }
+//  }
 }
 
 extension SharedSequenceConvertibleType where SharingStrategy == DriverSharingStrategy, Element: OptionalType {

@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuBar" customModule="Youtube" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="mGU-zH-UEE" id="8zk-EQ-xWa"/>
+                <outlet property="leftSliderConstraints" destination="YGZ-Dz-ChO" id="XWZ-NM-OLt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -27,13 +28,23 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqc-eV-2te">
+                    <rect key="frame" x="0.0" y="113" width="99" height="5"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="rB0-yF-uFJ"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="mGU-zH-UEE" secondAttribute="bottom" id="5HO-Tc-0dC"/>
+                <constraint firstItem="iqc-eV-2te" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.25" id="N57-sP-a0Q"/>
                 <constraint firstItem="mGU-zH-UEE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Roe-ez-8U9"/>
+                <constraint firstItem="iqc-eV-2te" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YGZ-Dz-ChO"/>
                 <constraint firstAttribute="trailing" secondItem="mGU-zH-UEE" secondAttribute="trailing" id="ex8-YS-xYI"/>
+                <constraint firstAttribute="bottom" secondItem="mGU-zH-UEE" secondAttribute="bottom" id="i4P-Ez-Tpa"/>
                 <constraint firstItem="mGU-zH-UEE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="p8A-NO-dZp"/>
+                <constraint firstAttribute="bottom" secondItem="iqc-eV-2te" secondAttribute="bottom" id="uA1-t3-Dh2"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="124.6376811594203" y="-107.8125"/>
