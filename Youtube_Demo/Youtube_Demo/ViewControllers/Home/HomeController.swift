@@ -10,15 +10,17 @@ import SwifterSwift
 
 class HomeController: BaseViewController {
 
+    @IBOutlet fileprivate weak var menuBar: MenuBar!
     @IBOutlet private weak var collectionView: UICollectionView!
 
-    private lazy var videos = [Video]() {
+    private lazy var features = [Feature]() {
         didSet {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
         }
     }
+
     private var viewModel: HomeViewModel
 
     init(viewModel: HomeViewModel) {
@@ -32,7 +34,12 @@ class HomeController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
+        menuBar.delegate = self
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        menuBar.selectedFirstItem()
     }
 
     override func setupUI() {
@@ -48,11 +55,13 @@ class HomeController: BaseViewController {
     override func bindingData() {
         let input = HomeViewModel.Input()
         let output = viewModel.transform(input: input)
-        output.videos.drive { [weak self] videos in
+        output.datas.drive { [weak self] features in
             guard let self = self else {
                 return
             }
-            self.videos = videos
+            self.setupCollectionView()
+            self.features = features
+
         }
         .disposed(by: disposeBag)
 
@@ -61,7 +70,10 @@ class HomeController: BaseViewController {
     private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(nibWithCellClass: VideoCell.self)
+        collectionView.register(nibWithCellClass: HomeCell.self)
+        collectionView.register(nibWithCellClass: TrendingCell.self)
+        collectionView.register(nibWithCellClass: PlaylistCell.self)
+        collectionView.register(nibWithCellClass: PersonCell.self)
     }
 
     private func setupNavigationBar() {
@@ -134,20 +146,59 @@ class HomeController: BaseViewController {
 
 extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return videos.count
+        return features.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withClass: VideoCell.self, for: indexPath)
-        cell.config(with: videos[indexPath.row])
-        return cell
+        let feature = features[indexPath.row]
+        switch feature {
+        case .home(models: let models):
+            let cell = collectionView.dequeueReusableCell(withClass: HomeCell.self, for: indexPath)
+            cell.config(with: models)
+            return cell
+        case .trending(models: let models):
+            let cell = collectionView.dequeueReusableCell(withClass: TrendingCell.self, for: indexPath)
+            return cell
+        case .playlist(models: let models):
+            let cell = collectionView.dequeueReusableCell(withClass: PlaylistCell.self, for: indexPath)
+            return cell
+        case .person(models: let models):
+            let cell = collectionView.dequeueReusableCell(withClass: PersonCell.self, for: indexPath)
+            return cell
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 250)
+        return CGSize(width: collectionView.frame.width, 
+                      height: collectionView.frame.height)
     }
 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let yOffset = scrollView.contentOffset.x / scrollView.frame.width
+
+        menuBar.scrollSlider(with: yOffset)
+    }
+
+//
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        let scrollY = scrollView.contentOffset.y
+//        self.navigationController?.setNavigationBarHidden(scrollY > 40, animated: true)
+//    }
+
+}
+
+extension HomeController: MenuBarDelegate {
+    func didSelectedIndex(with index: Int) {
+        collectionView.isPagingEnabled = false
+        collectionView.scrollToItem(
+            at: IndexPath(item: index, section: 0),
+            at: .centeredHorizontally,
+            animated: true
+        )
+        collectionView.isPagingEnabled = true
+
+    }
 }

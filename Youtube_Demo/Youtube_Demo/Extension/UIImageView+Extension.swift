@@ -9,15 +9,16 @@ import UIKit
 import Kingfisher
 
 extension UIImageView {
-    func setImage(with path: String) {
+    func setImage(with path: String, completion: (() -> Void)? = nil) {
         let source = URL(string: path)
-        kf.setImage(with: source, placeholder: nil, options: nil, progressBlock: nil) { result in
-            switch result {
-            case .success(let data):
-                self.image = data.image
-            case .failure(let error):
-                fatalError("fetch image not success")
-            }
-        }
+        KF.url(source)
+          .loadDiskFileSynchronously()
+          .cacheMemoryOnly()
+          .fade(duration: 0.25)
+          .onSuccess { result in
+              completion?()
+          }
+          .onFailure { error in }
+          .set(to: self)
     }
 }

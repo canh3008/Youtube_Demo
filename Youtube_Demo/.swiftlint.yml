@@ -15,5 +15,5 @@ identifier_name:
     - URL
 line_length:
     ignores_comments: true
-#    warning: 150
-#    error: 200
+    warning: 500
+    error: 1000
